@@ -28,6 +28,9 @@ const GOERLI_RPC_URL =
     process.env.GOERLI_RPC_URL;
 const MUMBAI_RPC_URL =
     process.env.MUMBAI_RPC_URL || "https://polygon-mumbai.g.alchemy.com/v2/your-api-key"
+
+const ARBITRUM_SEPOLIA_RPC_URL =
+process.env.ARBITRUM_SEPOLIA_RPC_URL || "https://polygon-mumbai.g.alchemy.com/v2/your-api-key"
 const PRIVATE_KEY = process.env.PRIVATE_KEY
 // optional
 const MNEMONIC = process.env.MNEMONIC || "Your mnemonic"
@@ -40,6 +43,7 @@ const AMOY_POLYGONSCAN_API_KEY = process.env.AMOY_POLYGONSCAN_API_KEY || "Your p
 const OPTIMISM_API_KEY = process.env.OPTIMISM_API_KEY || "Your Optimism API Key";
 const REPORT_GAS = process.env.REPORT_GAS || false
 const AMOY_RPC_URL = process.env.AMOY_RPC_URL || "Your polygonscan API key"
+const ARBITRUM_SEPOLIA_API_KEY = process.env.ARBITRUM_SEPOLIA_API_KEY
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -73,67 +77,73 @@ module.exports = {
         localhost: {
             chainId: 31337,
         },
-        // sepolia: {
-        //     url: SEPOLIA_RPC_URL !== undefined ? SEPOLIA_RPC_URL : "",
-        //     accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
-        //     //   accounts: {
-        //     //     mnemonic: MNEMONIC,
-        //     //   },
-        //     chainId: 11155111,
-        // },
-        // goerli: {
-        //     url: GOERLI_RPC_URL !== undefined ? GOERLI_RPC_URL : "",
-        //     accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
-        //     //   accounts: {
-        //     //     mnemonic: MNEMONIC,
-        //     //   },
-        //     chainId: 5,
-        // },
-        // mainnet: {
-        //     url: MAINNET_RPC_URL,
-        //     accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
-        //     //   accounts: {
-        //     //     mnemonic: MNEMONIC,
-        //     //   },
-        //     chainId: 1,
-        // },
-        // polygon: {
-        //     url: POLYGON_MAINNET_RPC_URL,
-        //     accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
-        //     chainId: 137,
-        // },
-        // // polygonzkevm: {
-        // //     url: POLYGON_ZKEVM_MAINNET_RPC_URL,
-        // //     accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
-        // //     chainId: 1101,
-        // // },
-        // // optimism: {
-        // //     url: OPTIMISM_MAINNET_RPC_URL,
-        // //     accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
-        // //     chainId: 10,
-        // // },
-        // mumbai: {
-        //     url: MUMBAI_RPC_URL,
-        //     accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
-        //     chainId: 80001,
-        // },
-        amoy: {
-            url: AMOY_RPC_URL,
+        sepolia: {
+            url: SEPOLIA_RPC_URL !== undefined ? SEPOLIA_RPC_URL : "",
             accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
-            chainId: 80002,
-        }
+            //   accounts: {
+            //     mnemonic: MNEMONIC,
+            //   },
+            chainId: 11155111,
+        },
+        goerli: {
+            url: GOERLI_RPC_URL !== undefined ? GOERLI_RPC_URL : "",
+            accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+            //   accounts: {
+            //     mnemonic: MNEMONIC,
+            //   },
+            chainId: 5,
+        },
+        mainnet: {
+            url: MAINNET_RPC_URL,
+            accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+            //   accounts: {
+            //     mnemonic: MNEMONIC,
+            //   },
+            chainId: 1,
+        },
+        polygon: {
+            url: POLYGON_MAINNET_RPC_URL,
+            accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+            chainId: 137,
+        },
+        // polygonzkevm: {
+        //     url: POLYGON_ZKEVM_MAINNET_RPC_URL,
+        //     accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+        //     chainId: 1101,
+        // },
+        // optimism: {
+        //     url: OPTIMISM_MAINNET_RPC_URL,
+        //     accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+        //     chainId: 10,
+        // },
+        mumbai: {
+            url: MUMBAI_RPC_URL,
+            accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+            chainId: 80001,
+        },
+        // amoy: {
+        //     url: AMOY_RPC_URL,
+        //     accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+        //     chainId: 80002,
+        // },
+        arbitrumSepolia: {
+            url: ARBITRUM_SEPOLIA_RPC_URL,
+            accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+            chainId: 421614,
+        },
     },
     defaultNetwork: "hardhat",
     etherscan: {
         // yarn hardhat verify --network <NETWORK> <CONTRACT_ADDRESS> <CONSTRUCTOR_PARAMETERS>
         apiKey: {
             // npx hardhat verify --list-networks
-            // sepolia: ETHERSCAN_API_KEY,
-            // goerli: ETHERSCAN_API_KEY,
-            // mainnet: ETHERSCAN_API_KEY,
-            // polygon: POLYGONSCAN_API_KEY,
-            // polygonMumbai: POLYGONSCAN_API_KEY,
-            amoy: AMOY_POLYGONSCAN_API_KEY
+            sepolia: ETHERSCAN_API_KEY,
+            goerli: ETHERSCAN_API_KEY,
+            mainnet: ETHERSCAN_API_KEY,
+            polygon: POLYGONSCAN_API_KEY,
+            polygonMumbai: POLYGONSCAN_API_KEY,
+            arbitrumSepolia: ARBITRUM_SEPOLIA_API_KEY
+            // amoy: AMOY_POLYGONSCAN_API_KEY
             // polygonzkevm: POLYGONSCAN_API_KEY,
             // optimism: OPTIMISM_API_KEY
         },

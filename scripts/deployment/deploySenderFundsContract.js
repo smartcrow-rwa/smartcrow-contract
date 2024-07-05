@@ -15,11 +15,11 @@ async function deploySenderFundsContract(chainId) {
 
           // // Polygon Amoy testnet
 
-          "0x1616d425cd540b256475cbfb604586c8598ec0fb",
-          "0xc091020dD0e357989f303FC99ac5899fa343fF6D",
-          "0xD0b33a7aCb9303D9FE2de7ba849ec9b96A4C10C1",
-          "0xb2df85a09cAB3a391Fd9ade76342583A0d4B75ce",
-          "0x52eF3d68BaB452a294342DC3e5f464d7f610f72E"
+          // "0x1616d425cd540b256475cbfb604586c8598ec0fb",
+          // "0xc091020dD0e357989f303FC99ac5899fa343fF6D",
+          // "0xD0b33a7aCb9303D9FE2de7ba849ec9b96A4C10C1",
+          // "0xb2df85a09cAB3a391Fd9ade76342583A0d4B75ce",
+          // "0x52eF3d68BaB452a294342DC3e5f464d7f610f72E"
 
           // polygon POS mainnet
           // "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
@@ -27,6 +27,13 @@ async function deploySenderFundsContract(chainId) {
           // "0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6",
           // "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
           // "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619"
+
+          // Aribitrum sepolia testnet - USDC only
+          "0xf3c3351d6bd0098eeb33ca8f830faf2a141ea2e1",
+          "0xf3c3351d6bd0098eeb33ca8f830faf2a141ea2e1",
+          "0xf3c3351d6bd0098eeb33ca8f830faf2a141ea2e1",
+          "0xf3c3351d6bd0098eeb33ca8f830faf2a141ea2e1",
+          "0xf3c3351d6bd0098eeb33ca8f830faf2a141ea2e1"
 
           // "0xBD21A10F619BE90d6066c941b04e340841F1F989",
           // "0x0fa8781a83e46826621b3bc094ea2a0212e71b23",
